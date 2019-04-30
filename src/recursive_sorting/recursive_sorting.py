@@ -29,8 +29,8 @@ def merge(arrA, arrB):
     else:
       merged.append(queueA.popleft())
   
-  merged.extend(list(queueA))
-  merged.extend(list(queueB))
+  merged.extend(queueA)
+  merged.extend(queueB)
 
   return merged
 
@@ -47,13 +47,6 @@ print(merge_sort([1, 3, 6, 2, 13, 41, 7]))
 
 # STRETCH: implement an in-place merge sort algorithm
 def merge_in_place(arr, start, mid, end):
-  # TO-DO
-
-  return arr
-
-def merge_sort_in_place(arr, l, r): 
-  # TO-DO
-
   return arr
 
 
