@@ -49,9 +49,13 @@ print(merge_sort([1, 3, 6, 2, 13, 41, 7]))
 def merge_in_place(arr, start, mid, end):
   return arr
 
+def merge_sort_in_place(arr, left, right):
+  return arr
+
+# print(merge_in_place([1,5,2,3,4], 0, 2, 4))
+# print(merge_sort_in_place([5,3,2,1,4], 0, 4))
 
 # STRETCH: implement the Timsort function below
 # hint: check out https://github.com/python/cpython/blob/master/Objects/listsort.txt
 def timsort(arr):
-
   return arr
