@@ -1,12 +1,12 @@
 def insertion_sort(arr):
-	for i in range(1, len(arr)):
-		temp = arr[i]
-		j = i
-		while j > 0 and temp < arr[j-1]:
-			arr[j] = arr[j-1]
-			j -= 1
-		arr[j] = temp
-	return arr
+  for i in range(1, len(arr)):
+    temp = arr[i]
+    j = i
+    while j > 0 and temp < arr[j-1]:
+      arr[j] = arr[j-1]
+      j -= 1
+    arr[j] = temp
+  return arr
 
 
 print(insertion_sort([1, 3, 6, 2, 13, 41, 7]))
@@ -45,5 +45,28 @@ def bubble_sort(arr):
 print(bubble_sort([1, 3, 6, 2, 13, 41, 7]))
 
 # STRETCH: implement the Count Sort function below
-def count_sort(arr, maximum = -1):
+def count_sort(arr):
+	if arr is None or len(arr) == 0:
+		return []
+	if min(arr) < 0:
+		return "Error, negative numbers not allowed in Count Sort"
+	
+	counts = []
+	sorted_nums = []
+	for n in range(0, max(arr)+1):
+		counts.append(0)
+		sorted_nums.append(0)
+	for n in arr:
+		counts[n] += 1
+	for i in range(1, len(counts)):
+		counts[i] += counts[i-1]
+	
+	for i in range(len(arr)):
+		sorted_nums[counts[arr[i]] - 1] = arr[i]
+		counts[arr[i]] -= 1
+
+	for i in range(len(arr)):
+		arr[i] = sorted_nums[i]
 	return arr
+
+print(count_sort([1, 3, 6, 2, 13, 41, 7]))
